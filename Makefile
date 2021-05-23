@@ -13,7 +13,7 @@ endif
 all: setup
 
 symlink:
-> @ ./task/symlink.sh
+> @ ./tasks/symlink.sh
 
 .PHONY: symlink
 
