@@ -1,10 +1,10 @@
-#!/usr/local/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
 # coc.nivm: symlink vscode snippets to coc
 
 VS_CODE_SNIPPETS_DIR="$HOME/.dotfiles/Library/Application Support/Code - Insiders/User/snippets"
-
 COC_SNIPPETS_DIR="$HOME/.config/coc/vsc-snippets"
 
 mkdir -p "$COC_SNIPPETS_DIR"

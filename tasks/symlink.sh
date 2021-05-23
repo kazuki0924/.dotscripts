@@ -75,3 +75,6 @@ for FILE in "${FILES[@]}"; do
   echo creating symlink:
   ln -sfnv "$DOTFILES_DIR/$FILE" "$HOME/$FILE"
 done
+
+# other symlinks
+"$HOME/.dotscripts/tasks/vs_code_coc_snippets_symlink.sh"

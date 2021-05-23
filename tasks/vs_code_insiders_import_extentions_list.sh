@@ -1,13 +1,10 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-DIR=$HOME/.dotfiles/.config/vs-code
-echo mkdir: created directory "$DIR"
-mkdir -p "$DIR"
-cd "$DIR"
-
-FILENAME="extensions.txt"
+FILE="$HOME/.dotfiles/.config/vs-code/extensions.txt"
 
 # install extensions
 while read -r LINE; do
   code-insiders --force --install-extension "$LINE"
-done <"$FILENAME"
+done <"$FILE"

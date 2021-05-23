@@ -1,10 +1,16 @@
-#!/usr/local/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
 # git: add user to git locally
 
-# Requirements:
-# git
+REQUIREMENTS=(
+  git
+)
+
+for REQUIREMENT in "${REQUIREMENTS[@]}"; do
+  which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
+done
 
 echo local user.name:
 read -r USER_NAME
