@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-. "$HOME/.dotscripts/job/err_trap.sh"
+. "$HOME/.dotscripts/jobs/err_trap.sh"
 
 LOGDIR="$HOME/.dotscripts_log"
 LOGFILE="$LOGDIR/$(date +"%Y%m%d").log"
