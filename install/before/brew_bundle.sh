@@ -13,7 +13,7 @@ if which ! brew &>/dev/null; then
 fi
 
 __bundle() {
-  brew bundle --verbose --file="$1"
+  brew bundle --verbose --no-lock --file="$1"
 }
 
 set +e
