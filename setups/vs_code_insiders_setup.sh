@@ -101,6 +101,10 @@ EXTENSIONS=(
 	# Horizon Theme
 	# https://github.com/jolaleye/horizon-theme-vscode
 	https://marketplace.visualstudio.com/items?itemName=jolaleye.horizon-theme-vscode
+
+  # Live Server
+  # https://github.com/ritwickdey/vscode-live-server
+  # https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 )
 
 for EXTENSION in "${EXTENSIONS[@]}"; do

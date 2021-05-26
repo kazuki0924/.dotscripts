@@ -3,7 +3,7 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 REQUIREMENTS=(
-  "fnm --HEAD"
+  fnm
   fzf
 )
 

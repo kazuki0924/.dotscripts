@@ -5,7 +5,7 @@
 # - install with go get
 
 REQUIREMENTS=(
-  "goenv --HEAD"
+  goenv
   fzf
 )
 

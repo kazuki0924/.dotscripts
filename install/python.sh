@@ -6,7 +6,7 @@ IFS=$'\n\t'
 # homebrew pyenv fzf
 
 REQUIREMENTS=(
-  "pyenv --HEAD"
+  pyenv
   fzf
 )
 

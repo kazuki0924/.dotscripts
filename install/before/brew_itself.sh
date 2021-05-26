@@ -10,6 +10,8 @@ if ! which brew &>/dev/null; then
 fi
 
 if which brew &>/dev/null; then
+  set +e
   brew doctor
+  set -e
   brew update --verbose
 fi
