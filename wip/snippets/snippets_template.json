@@ -1,0 +1,26 @@
+{
+  "snippet_example": {
+    "prefix": "ARRAY_FOR_LOOP",
+    "body": [
+      "${1:ITEMS}=(",
+      "\t${2:ITEM1}",
+      ")",
+      "for ${3:ITEM} in \"${${1:ITEMS}[@]}\"; do",
+      "\t${4:COMMAND} \"$${3:ITEM}\"",
+      "done\n"
+    ],
+    "description": "repl for writing snippets"
+  },
+  "snippet_example_2": {
+    "prefix": "ARRAY_FOR_LOOP",
+    "body": [
+      "${1:ITEMS}=(",
+      "\t${2:ITEM1}",
+      ")",
+      "for ${3:ITEM} in \"${${1:ITEMS}[@]}\"; do",
+      "\t${4:COMMAND} \"$${3:ITEM}\"",
+      "done\n"
+    ],
+    "description": "repl for writing snippets"
+  },
+}

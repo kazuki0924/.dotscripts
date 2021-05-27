@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 set -euo pipefail
 
-# Open links for software downloads.
+# Open links for softwares to download
 
 LINKS=(
   # KensingtonWorks

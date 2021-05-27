@@ -1,13 +1,16 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-# install coc plugins
+# coc.nvim: install plugins
 
 # Useful links:
 # coc.nvim on npm
 # - https://www.npmjs.com/search?q=keywords%3Acoc.nvim
 
-mkdir -p ~/.config/coc/extensions
-cd ~/.config/coc/extensions
+DIR="$HOME/.config/coc/extensions"
+mkdir -p "$DIR"
+cd "$DIR"
 
 if [ ! -f package.json ]; then
   echo '{"dependencies":{}}' >package.json

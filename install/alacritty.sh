@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-# install Alacritty
+# Alacritty
 
 # Requirements:
 # cargo

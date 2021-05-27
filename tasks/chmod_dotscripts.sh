@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-# chmod all .sh files in .dotscripts directory or dir specified in $1
+# Chmod: chmod 777 all .sh files in .dotscripts directory or dir specified in $1
 
 mapfile -t FILES < <(fd -e sh . "${1-$HOME/.dotscripts}")
 

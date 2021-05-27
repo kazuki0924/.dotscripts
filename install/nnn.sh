@@ -2,6 +2,8 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
+# nnn: 
+
 # Requirements:
 # Nerd Font installed
 

@@ -2,8 +2,9 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-# Requirements:
-# homebrew pyenv fzf
+# Python:
+# - install with pyenv interactively
+# - install packages with pip install
 
 REQUIREMENTS=(
   pyenv

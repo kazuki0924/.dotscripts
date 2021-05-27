@@ -2,6 +2,8 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
+# VS Code Insiders: install extensions from .txt file
+
 FILE="$HOME/.dotfiles/.config/vs-code/extensions.txt"
 
 # install extensions

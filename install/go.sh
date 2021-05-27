@@ -2,7 +2,7 @@
 
 # Golang: 
 # - install with goenv interactively
-# - install with go get
+# - install packages with go get
 
 REQUIREMENTS=(
   goenv

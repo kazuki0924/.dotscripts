@@ -1,10 +1,12 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-# create symlink
+# VS Code / VS Code Insiders: install extensions
+
+# create symlink if using Insiders
 ln -s "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code" "/usr/local/bin/code-insiders"
 ln -s "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code" "/usr/local/bin/code"
-
-# install extensions
 
 EXTENSIONS=(
 	766b.go-outliner
@@ -109,6 +111,12 @@ EXTENSIONS=(
 
 for EXTENSION in "${EXTENSIONS[@]}"; do
 	ITEMNAME="$(echo "$EXTENSION" | awk -F "itemName=" '{print $NF}')"
-	code-insiders --force --install-extension "$ITEMNAME"
+  ARGS="--force --install-extension $ITEMNAME"
+  if which code &>/dev/null; then
+    code "${ARGS[@]}"
+  fi
+  if which code-insiders &>/dev/null;  then
+    code-insiders "${ARGS[@]}"
+  fi
 	echo installed "$ITEMNAME"
 done

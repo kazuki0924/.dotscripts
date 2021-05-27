@@ -1,6 +1,8 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-# Add json files for Chrome to automatically download the extensions
+# Chrome: add json files to automatically download the extensions
 
 # Useful tools:
 # Export links of all extensions
@@ -10,7 +12,6 @@ DIR="$HOME/.dotfiles/Library/Application Support/Google/Chrome/External Extensio
 
 echo mkdir: created directory "$DIR"
 mkdir -p "$DIR"
-cd "$DIR"
 
 EXTENSIONS=(
 	# Bitwarden - Free Password Manager
@@ -53,6 +54,6 @@ EXTENSIONS=(
 
 for EXTENSION in "${EXTENSIONS[@]}"; do
 	FILENAME="$(echo "$EXTENSION" | awk -F "/" '{print $NF}')".json
-	echo '{"external_update_url":"https://clients2.google.com/service/update2/crx"}' >"$FILENAME"
+	echo '{"external_update_url":"https://clients2.google.com/service/update2/crx"}' >"$DIR/$FILENAME"
 	echo created "$FILENAME"
 done

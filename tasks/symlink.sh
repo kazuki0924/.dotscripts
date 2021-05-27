@@ -26,7 +26,6 @@ DOTFILES_BACKUP_DIR="$HOME/.dotfiles_bak/$(date +"%Y_%m_%d")"
 NOT_DOTDIRS=(
 	.git
 	.gitsecret
-	scripts
 	assets
 )
 

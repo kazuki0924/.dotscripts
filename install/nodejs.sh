@@ -2,6 +2,10 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
+# Node.js: 
+# - install with fnm interactively
+# - install packages with go npm i -g
+
 REQUIREMENTS=(
   fnm
   fzf
