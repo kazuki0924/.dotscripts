@@ -68,14 +68,16 @@ done
 # backup files and create symbolic links
 for FILE in "${FILES[@]}"; do
 	FILE=$(extract_file_path "$FILE")
-	if [[ -f "$HOME/$FILE" ]] && [[ ! -L "$HOME/$FILE" ]]; then
-		# create .dotfiles_backup in homedir
-		mkdir -p "$DOTFILES_BACKUP_DIR"
-		echo moving existing files to backup:
-		mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR"
+	if [[ ! -L "$HOME/$FILE" ]]; then
+		if [[ -f "$HOME/$FILE" ]]; then
+			# create .dotfiles_backup in homedir
+			mkdir -p "$DOTFILES_BACKUP_DIR"
+			echo moving existing files to backup:
+			mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR"
+		fi
+		echo creating symlink:
+		ln -sfnv "$DOTFILES_DIR/$FILE" "$HOME/$FILE"
 	fi
-	echo creating symlink:
-	ln -sfnv "$DOTFILES_DIR/$FILE" "$HOME/$FILE"
 done
 
 # other symlinks
