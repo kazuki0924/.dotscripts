@@ -18,9 +18,9 @@ for REQUIREMENT in "${REQUIREMENTS[@]}"; do
 done
 
 DOT_DIRNAME="${1-".dotfiles"}"
-HOME_DIRNAME="$HOME"
-if [ -n "$2" ]; then
-	HOME_DIRNAME+="/$2"
+HOME_DIRNAME="${2-$HOME}"
+if [ ! "$HOME_DIRNAME" = "$HOME" ]; then
+	HOME_DIRNAME="$HOME/$HOME_DIRNAME"
 fi
 
 DOTFILES_DIR="$HOME/$DOT_DIRNAME"
