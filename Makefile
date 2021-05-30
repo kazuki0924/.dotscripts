@@ -14,6 +14,8 @@ all: setup
 
 symlink:
 > @ ./tasks/symlink.sh
+> @ ./tasks/symlink.sh .nvimfiles .config/nvim
+> @ ./tasks/vs_code_coc_snippets_symlink.sh
 
 .PHONY: symlink
 
