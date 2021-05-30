@@ -16,6 +16,7 @@ symlink:
 > @ ./tasks/symlink.sh
 > @ ./tasks/symlink.sh .nvimfiles .config/nvim
 > @ ./tasks/vs_code_coc_snippets_symlink.sh
+> @ ./tasks/purge_dead_symlinks.sh
 
 .PHONY: symlink
 
