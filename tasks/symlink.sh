@@ -90,5 +90,3 @@ for FILE in "${FILES[@]}"; do
 	fi
 done
 
-# other symlinks
-"$HOME/.dotscripts/tasks/vs_code_coc_snippets_symlink.sh"
