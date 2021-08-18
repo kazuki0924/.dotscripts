@@ -50,8 +50,8 @@ EXTENSIONS=(
 	https://chrome.google.com/webstore/detail/jaekigmcljkkalnicnjoafgfjoefkpeg
 	# Firenvim
 	https://chrome.google.com/webstore/detail/egpjdkipkomnmjhjmdamaniclmdlobbo
-  # gruvbox theme
-  https://chrome.google.com/webstore/detail/gruvbox-theme/ihennfdbghdiflogeancnalflhgmanop
+	# gruvbox theme
+	https://chrome.google.com/webstore/detail/gruvbox-theme/ihennfdbghdiflogeancnalflhgmanop
 )
 
 for EXTENSION in "${EXTENSIONS[@]}"; do

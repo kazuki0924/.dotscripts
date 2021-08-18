@@ -38,6 +38,8 @@ NOT_DOTFILES=(
 	.DS_Store
 	README.md
 	Makefile
+	.sqlfluff
+	.lua-format
 )
 
 FIND_DIRS_COMMAND="fd -t d -H . $DOTFILES_DIR"
