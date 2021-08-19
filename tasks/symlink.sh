@@ -31,6 +31,8 @@ NOT_DOTDIRS=(
 	.git
 	.gitsecret
 	assets
+	settings
+	.vscodes
 )
 
 # list of files to not be included in files for creating symbolic links
@@ -40,6 +42,8 @@ NOT_DOTFILES=(
 	Makefile
 	.sqlfluff
 	.lua-format
+	settings.zip
+	.gitignore
 )
 
 FIND_DIRS_COMMAND="fd -t d -H . $DOTFILES_DIR"
@@ -91,4 +95,3 @@ for FILE in "${FILES[@]}"; do
 		ln -sfnv "$DOTFILES_DIR/$FILE" "$HOME_DIRNAME/$FILE"
 	fi
 done
-

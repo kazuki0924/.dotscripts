@@ -15,6 +15,7 @@ all: setup
 symlink:
 > @ ./tasks/symlink.sh
 > @ ./tasks/symlink.sh .nvimfiles .config/nvim
+> @ ./tasks/symlink.sh .golandfiles $$HOME
 > @ ./tasks/purge_dead_symlinks.sh
 
 .PHONY: symlink

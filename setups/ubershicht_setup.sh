@@ -35,6 +35,7 @@ DOTDIRS=(
   ".dotscripts"
   ".zshfiles"
   ".vscodefiles"
+  ".golandfiles"
   ".nvimfiles"
 )
 
