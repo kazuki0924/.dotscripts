@@ -42,10 +42,6 @@ echo ""
 echo installing with npm...
 echo ""
 
-# tldr
-# https://github.com/tldr-pages/tldr
-npm i -g tldr
-
 # bash-language-server
 # https://github.com/bash-lsp/bash-language-server
 npm i -g bash-language-server

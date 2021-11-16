@@ -45,8 +45,21 @@ pip install -U --user edir
 
 # pynvim
 # https://github.com/neovim/pynvim
-python3 -m pip install -U --user pynvim
+pip install -U --user pynvim
 
 # vint
 # https://github.com/Vimjas/vint
 pip install -U --user vim-vint
+
+# sqlfluff
+# https://github.com/sqlfluff/sqlfluff
+pip install -U --user sqlfluff
+
+# pytest-testinfra
+# https://github.com/pytest-dev/pytest-testinfra
+pip install -U --user pytest-testinfra
+
+# paramiko
+# https://github.com/paramiko/paramiko
+pip install -U --user paramiko
+
