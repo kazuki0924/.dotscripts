@@ -3,14 +3,10 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 # Homebrew: brew bundle helper
-# if TARGET=$1 is not set, bundle all Brewfiles
-# else bundle specific Brewfile by dir name
-# e.g. bash brew_bundle.sh cask/after 
+# if TARGET=$1 is not set, bundle only essentials
+# else bundle specific Brewfile by file name releative to ~/.dotfiles/.Brewfile
 
-if which ! brew &>/dev/null; then
-  echo homebrew must be installed.
-  exit 1
-fi
+# e.g. bash brew_bundle.sh brew/.Brewfile_essential
 
 __bundle() {
   brew bundle --verbose --no-lock --file="$1"
@@ -30,11 +26,14 @@ done
 TARGET="${1-}"
 
 if [[ -z "$TARGET" ]]; then
-  mapfile -t BREWFILES < <(fd -H ".Brewfile" "$HOME/.dotfiles/.Brewfiles" -E "taps")
-  for BREWFILE in "${BREWFILES[@]}"; do
-    echo "$BREWFILE"
-    __bundle "$BREWFILE"
-  done
+  # mapfile -t BREWFILES < <(fd -H ".Brewfile" "$HOME/.dotfiles/.Brewfiles" -E "taps")
+  # for BREWFILE in "${BREWFILES[@]}"; do
+  #   echo "$BREWFILE"
+  #   __bundle "$BREWFILE"
+  # done
+  __bundle "$HOME/.dotfiles/.Brewfile/$1"
 else
-  __bundle "$HOME/.dotfiles/$TARGET/.Brewfile"
+  __bundle "$HOME/.dotfiles/.Brewfile/brew/.Brewfile_essential"
+  __bundle "$HOME/.dotfiles/.Brewfile/cask/.Brewfile_essential"
+  __bundle "$HOME/.dotfiles/.Brewfile/cask/.Brewfile_font"
 fi
