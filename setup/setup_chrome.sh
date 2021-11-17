@@ -16,42 +16,44 @@ mkdir -p "$DIR"
 EXTENSIONS=(
 	# Bitwarden - Free Password Manager
 	https://chrome.google.com/webstore/detail/nngceckbapebfimnlniiiahkandclblb
+  # Honey
+  https://chrome.google.com/webstore/detail/bmnlcjabgnpnenekpadlanbbkooimhnj
+  # Surfingkeys
+  https://chrome.google.com/webstore/detail/gfbliohnnapiefjpjlpjnehglfpaknnc
+  # Firenvim
+  https://chrome.google.com/webstore/detail/egpjdkipkomnmjhjmdamaniclmdlobbo
 	# Dark Reader
 	https://chrome.google.com/webstore/detail/eimadpbcbfnmbkopoojfekhnkhdbieeh
-	# Dualless
-	https://chrome.google.com/webstore/detail/bgdpkilkheacbboffppjgceiplijhfpd
+  # OneTab
+  https://chrome.google.com/webstore/detail/chphlpgkkbolifaimnlloiipkdnihall
+  # The Great Suspender
+  https://chrome.google.com/webstore/detail/jaekigmcljkkalnicnjoafgfjoefkpeg
+  # New Tab Redirect
+  https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna
+  # Google Translate
+  https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb
 	# DuckDuckGo Privacy Essentials
 	https://chrome.google.com/webstore/detail/bkdgflcldnnnapblkhphbgpggdiikppg
 	# Enhanced GitHub
 	https://chrome.google.com/webstore/detail/anlikcnbgdeidpacdbdljnabclhahhmd
-	# Export links of all extensions
-	https://chrome.google.com/webstore/detail/cmeckkgeamghjhkepejgjockldoblhcb
+  # Refined GitHub
+  https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf
+  # OctoLinker
+  https://chrome.google.com/webstore/detail/jlmafbaeoofdegohdhinkhilhclaklkp
 	# Gitako - GitHub file tree
 	https://chrome.google.com/webstore/detail/giljefjcheohhamkjphiebfjnlphnokk
 	# GitHub File Icons
 	https://chrome.google.com/webstore/detail/kkokonbjllgdmblmbichgkkikhlcnekp
-	# Honey
-	https://chrome.google.com/webstore/detail/bmnlcjabgnpnenekpadlanbbkooimhnj
-	# Initab
-	https://chrome.google.com/webstore/detail/igmbdimmfbpdplpahpapkploofmgaipl
-	# JSONView
-	https://chrome.google.com/webstore/detail/chklaanhfefbnpoihckbnefhakgolnmc
+  # Atom File Icons Web
+  https://chrome.google.com/webstore/detail/atom-file-icons-web/pljfkbaipkidhmaljaaakibigbcmmpnc
 	# Material DevTools Theme Collection
 	https://chrome.google.com/webstore/detail/jmefikbdhgocdjeejjnnepgnfkkbpgjo
-	# OctoLinker
-	https://chrome.google.com/webstore/detail/jlmafbaeoofdegohdhinkhilhclaklkp
-	# OneTab
-	https://chrome.google.com/webstore/detail/chphlpgkkbolifaimnlloiipkdnihall
-	# Raindrop.io
-	https://chrome.google.com/webstore/detail/ldgfbffkinooeloadekpmfoklnobpien
-	# Surfingkeys
-	https://chrome.google.com/webstore/detail/gfbliohnnapiefjpjlpjnehglfpaknnc
-	# The Great Suspender
-	https://chrome.google.com/webstore/detail/jaekigmcljkkalnicnjoafgfjoefkpeg
-	# Firenvim
-	https://chrome.google.com/webstore/detail/egpjdkipkomnmjhjmdamaniclmdlobbo
 	# gruvbox theme
 	https://chrome.google.com/webstore/detail/gruvbox-theme/ihennfdbghdiflogeancnalflhgmanop
+  # JSONView
+  https://chrome.google.com/webstore/detail/chklaanhfefbnpoihckbnefhakgolnmc
+  # Export links of all extensions
+  https://chrome.google.com/webstore/detail/export-links-of-all-exten/cmeckkgeamghjhkepejgjockldoblhcb
 )
 
 for EXTENSION in "${EXTENSIONS[@]}"; do
