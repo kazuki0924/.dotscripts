@@ -45,8 +45,8 @@ echo_red_line() {
 
 on_error() {
   SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-	TILDE=$(echo $SOURCE_DIR | sed "s|$HOME|~|")
-	DOTSCRIPT_DIR=$(echo $SOURCE_DIR | sed "s|$HOME/.dotscripts/||")
+	TILDE=$(echo "$SOURCE_DIR" | sed "s|$HOME|~|")
+	DOTSCRIPT_DIR=$(echo "$SOURCE_DIR" | sed "s|$HOME/.dotscripts/||")
 
 	echo ""
 	echo_red_line
