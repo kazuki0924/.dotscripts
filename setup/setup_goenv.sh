@@ -1,8 +1,8 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-# Golang: 
-# - install with goenv interactively
-# - install packages with go get
+# golang: install with goenv interactively
 
 REQUIREMENTS=(
   goenv
@@ -24,19 +24,4 @@ goenv global "$VERSION"
 
 echo ""
 echo goenv versions
-
 goenv versions
-
-# install w/ go get
-env GO111MODULE=on >/dev/null 2>&1
-
-echo ""
-echo installing go packages...
-
-# slit
-# https://github.com/tigrawap/slit
-go get -u github.com/tigrawap/slit/cmd/slit
-
-# pistol
-# https://github.com/doronbehar/pistol
-go get -u github.com/doronbehar/pistol/cmd/pistol

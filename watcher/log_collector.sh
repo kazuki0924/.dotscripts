@@ -44,9 +44,9 @@ echo_red_line() {
 }
 
 on_error() {
-  SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-	TILDE=$(echo "$SOURCE_DIR" | sed "s|$HOME|~|")
-	DOTSCRIPT_DIR=$(echo "$SOURCE_DIR" | sed "s|$HOME/.dotscripts/||")
+  # SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+	# TILDE=$(echo "$SOURCE_DIR" | sed "s|$HOME|~|")
+	# DOTSCRIPT_DIR=$(echo "$SOURCE_DIR" | sed "s|$HOME/.dotscripts||")
 
 	echo ""
 	echo_red_line
@@ -54,17 +54,19 @@ on_error() {
 	echo ""
 	echo -n "Location: "
 	echo_in_cyan "$0"
-	echo -n " [Line "
+  echo ""
+	echo -n "Line: "
 	echo_in_cyan $LINENO
-	echo -n "]: Status "
+  echo ""
+	echo -n "Status: "
 	echo_in_cyan $?
 	echo ""
 	echo -n "PID: "
 	echo_in_cyan "$$"
 	echo ""
-	echo -n "Bash Source: "
-	echo_in_cyan "$TILDE"
-	echo ""
+	# echo -n "Bash Source: "
+	# echo_in_cyan "$TILDE"
+	# echo ""
 	LOGDIR=$(echo "$HOME/.dotscripts_log" | sed "s|$HOME|~|")
 	LOGFILE="$LOGDIR/$(date +"%Y%m%d")_dotscripts.log"
 	echo -n "Log Output: "
@@ -79,10 +81,17 @@ on_error() {
 	done
 	echo_in_cyan "$ARGS"
 	echo ""
-	echo -n "dotscript: "
-	echo_in_cyan "$DOTSCRIPT_DIR/$0"
-	echo ""
+	# echo -n "dotscript: "
+	# echo_in_cyan "$DOTSCRIPT_DIR$0"
+	# echo ""
 	echo_red_line
 }
 
 trap 'on_error "$@"' ERR
+
+LOGDIR="$HOME/.dotscripts_log"
+LOGFILE="$LOGDIR/$(date +"%Y%m%d").log"
+
+mkdir -p "$LOGDIR"
+
+"${1-}" 2>&1 | tee -a "$LOGFILE"

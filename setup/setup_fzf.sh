@@ -2,15 +2,14 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-brew install bash
+# fzf
 
 REQUIREMENTS=(
-  nvim
+  fzf
 )
 
 for REQUIREMENT in "${REQUIREMENTS[@]}"; do
   which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
 done
 
-sudo -s
-echo /usr/local/bin/bash >> /etc/shells
+/usr/local/opt/fzf/install --bin --key-bindings --completion --no-update-rc

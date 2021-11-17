@@ -2,9 +2,7 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-# Node.js: 
-# - install with fnm interactively
-# - install packages with go npm i -g
+# node.js: install with fnm interactively
 
 REQUIREMENTS=(
   fnm
@@ -33,19 +31,4 @@ fnm default "$VERSION"
 
 echo ""
 echo fnm current
-
 fnm current
-
-# install w/ npm install
-
-echo ""
-echo installing with npm...
-echo ""
-
-# bash-language-server
-# https://github.com/bash-lsp/bash-language-server
-npm i -g bash-language-server
-
-# strip-json-comments-cli
-# https://github.com/sindresorhus/strip-json-comments-cli
-npm i -g strip-json-comments-cli
