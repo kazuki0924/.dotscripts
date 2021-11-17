@@ -40,3 +40,6 @@ symlink:
 > @ ./tasks/purge_dead_symlinks.sh
 
 .PHONY: symlink
+
+brew/prerequisites:
+> @ brew install make bash trash-cli fd
