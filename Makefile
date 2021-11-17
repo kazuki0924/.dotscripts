@@ -16,6 +16,21 @@ setup: clone symlink
 
 .PHONY: setup
 
+clone:
+> @ git -C ~/.dotscripts pull
+> @ [[ ! -d ~/.dotfiles ]] && git clone https://github.com/kazuki0924/.dotfiles ~/.dotfiles
+> @ git -C ~/.dotfiles pull
+> @ [[ ! -d ~/.zshfiles ]] && git clone https://github.com/kazuki0924/.zshfiles ~/.zshfiles
+> @ git -C ~/.zshfiles pull
+> @ [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
+> @ git -C ~/.nvimfiles pull
+> @ [[ ! -d ~/.golandfiles ]] && git clone https://github.com/kazuki0924/.golandfiles ~/.golandfiles
+> @ git -C ~/.golandfiles pull
+> @ [[ ! -d ~/.vscodefiles ]] && git clone https://github.com/kazuki0924/.vscodefiles ~/.vscodefiles
+> @ git -C ~/.vscodefiles pull
+
+.PHONY: clone
+
 symlink:
 > @ cd ~/.dotfiles && make symlink && cd -
 > @ cd ~/.zshfiles && make symlink && cd -
@@ -25,18 +40,3 @@ symlink:
 > @ ./tasks/purge_dead_symlinks.sh
 
 .PHONY: symlink
-
-clone:
-> @ git -C ~/.dotscripts pull
-> @ [[ ! -d ~/.dotfiles ]] && git clone https://github.com/kazuki0924/.dotfiles ~/.dotfiles
-> @ git -C ~/.dotfiles pull
-> @ [[ ! -d ~/.zshfiles ]] && git clone https://github.com/kazuki0924/.zshfiles ~/.zshfiles
-	> @ git -C ~/.zshfiles pull
-> @ [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
-> @ git -C ~/.nvimfiles pull
-> @ [[ ! -d ~/.golandfiles ]] && git clone https://github.com/kazuki0924/.golandfiles ~/.golandfiles
-	> @ git -C ~/.golandfiles pull
-> @ [[ ! -d ~/.vscodefiles ]] && git clone https://github.com/kazuki0924/.vscodefiles ~/.vscodefiles
-> @ git -C ~/.vscodefiles pull
-
-.PHONY: clone
