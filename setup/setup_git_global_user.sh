@@ -18,7 +18,7 @@ fi
 
 echo global user.name:
 read -r USER_NAME
-echo global user.emal:
+echo global user.email:
 read -r USER_EMAL
 
 tee -a "$FILE" <<END
