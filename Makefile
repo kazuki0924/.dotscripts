@@ -12,32 +12,31 @@ endif
 
 all: setup
 
+setup: clone symlink
+
+.PHONY: setup
+
 symlink:
-> @ ./tasks/symlink.sh
-> @ cd ~/.nvimfiles && make symlink && cd -
-> @ cd ~/.vscodefiles && make symlink && cd -
-> @ cd ~/.golandfiles && make symlink && cd -
+> @ cd ~/.dotfiles && make symlink && cd -
 > @ cd ~/.zshfiles && make symlink && cd -
+> @ cd ~/.nvimfiles && make symlink && cd -
+> @ cd ~/.golandfiles && make symlink && cd -
+> @ cd ~/.vscodefiles && make symlink && cd -
 > @ ./tasks/purge_dead_symlinks.sh
 
 .PHONY: symlink
 
-git/pull_all:
-> @ echo git pull .dotfiles, .nvimfiles, .vscodefiles, .golandfiles, .zshfiles, and .dotscripts:
+clone:
+> @ git -C ~/.dotscripts pull
+> @ [[ ! -d ~/.dotfiles ]] && git clone https://github.com/kazuki0924/.dotfiles ~/.dotfiles
 > @ git -C ~/.dotfiles pull
+> @ [[ ! -d ~/.zshfiles ]] && git clone https://github.com/kazuki0924/.zshfiles ~/.zshfiles
+	> @ git -C ~/.zshfiles pull
 > @ [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
 > @ git -C ~/.nvimfiles pull
+> @ [[ ! -d ~/.golandfiles ]] && git clone https://github.com/kazuki0924/.golandfiles ~/.golandfiles
+	> @ git -C ~/.golandfiles pull
 > @ [[ ! -d ~/.vscodefiles ]] && git clone https://github.com/kazuki0924/.vscodefiles ~/.vscodefiles
 > @ git -C ~/.vscodefiles pull
-> @ [[ ! -d ~/.golandfiles ]] && git clone https://github.com/kazuki0924/.golandfiles ~/.golandfiles
-> @ git -C ~/.golandfiles pull
-> @ [[ ! -d ~/.zshfiles ]] && git clone https://github.com/kazuki0924/.zshfiles ~/.zshfiles
-> @ git -C ~/.zshfiles pull
-> @ [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
-> @ git -C ~/.dotscripts pull
 
-.PHONY: git/pull_all
-
-setup: git/pull_all symlink
-
-.PHONY: setup
+.PHONY: clone
