@@ -26,9 +26,9 @@ fnm completions --shell zsh | tee >"$HOME/.dotfiles/.config/zsh/completions/_fnm
 echo Choose which version of Node.js to install globally
 # fuzzy find versions filtering out only the numbered ones in reverse order
 VERSION="v$(fnm ls-remote | cut -c 2- | awk '$0 !~ /[a-z]/' | sort -rn -k 1 -t "." | fzf --layout=reverse --height=20%)"
-fnm install "$VERSION"
-fnm default "$VERSION"
-
+fnm install "${VERSION//[[:space:]]/}"
+fnm default "${VERSION//[[:space:]]/}"
+ 
 echo ""
 echo fnm current
 fnm current
