@@ -34,9 +34,9 @@ for TAP in "${TAPS[@]}"; do
 done
 
 if [[ -z "$TARGET" ]]; then
-  __bundle "$HOME/.dotfiles/.Brewfile/$TARGET"
+  brew_bundle "$HOME/.dotfiles/.Brewfiles/brew/.Brewfile_essentials"
+  brew_bundle "$HOME/.dotfiles/.Brewfiles/cask/.Brewfile_essentials"
+  brew_bundle "$HOME/.dotfiles/.Brewfiles/cask/.Brewfile_font"
 else
-  __bundle "$HOME/.dotfiles/.Brewfile/brew/.Brewfile_essentials"
-  __bundle "$HOME/.dotfiles/.Brewfile/cask/.Brewfile_essentials"
-  __bundle "$HOME/.dotfiles/.Brewfile/cask/.Brewfile_font"
+  brew_bundle "$HOME/.dotfiles/.Brewfiles/$TARGET"
 fi
