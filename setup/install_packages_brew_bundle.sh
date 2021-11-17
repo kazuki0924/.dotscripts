@@ -34,7 +34,7 @@ for TAP in "${TAPS[@]}"; do
 done
 
 if [[ -z "$TARGET" ]]; then
-  __bundle "$HOME/.dotfiles/.Brewfile/$1"
+  __bundle "$HOME/.dotfiles/.Brewfile/$TARGET"
 else
   __bundle "$HOME/.dotfiles/.Brewfile/brew/.Brewfile_essentials"
   __bundle "$HOME/.dotfiles/.Brewfile/cask/.Brewfile_essentials"
