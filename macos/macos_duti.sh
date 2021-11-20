@@ -1,10 +1,8 @@
-#!/usr/local/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-# Duti: set default document and URL handlers for MacOS
-
-# Requirements:
-# duti
+# duti: set default document and URL handlers for MacOS
 
 # Determine the bundle bundle ID:
 # mdls /Applications/iPhoto.app | grep kMDItemCF
@@ -13,6 +11,14 @@ set -euo pipefail
 
 # Delay start for a few seconds. If it runs too early, the change won't register.
 # sleep 5
+
+REQUIREMENTS=(
+	duti
+)
+
+for REQUIREMENT in "${REQUIREMENTS[@]}"; do
+	which "${REQUIREMENT}" &>/dev/null || brew install "${REQUIREMENT}"
+done
 
 EDITOR="com.microsoft.VSCodeInsiders"
 
