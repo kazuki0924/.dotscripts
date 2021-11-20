@@ -8,11 +8,11 @@ IFS=$'\n\t'
 # Nerd Font installed
 
 # install nnn
-git clone https://github.com/jarun/nnn "$HOME"/.oss/nnn
+[[ ! -d "${HOME}/.oss/nnn" ]] && git clone https://github.com/jarun/nnn "${HOME}/.oss/nnn"
 cd "$HOME"/.oss/nnn
 make O_NERD=1
-trash-put /usr/local/bin/nnn
-cp nnn /usr/local/bin
+[[ -f /usr/local/bin/nnn ]] && trash-put /usr/local/bin/nnn
+cp "${HOME}/.oss/nnn" /usr/local/bin
 
 # install nnn plugins:
 # https://github.com/jarun/nnn
