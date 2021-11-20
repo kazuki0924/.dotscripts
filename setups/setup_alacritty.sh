@@ -8,7 +8,7 @@ IFS=$'\n\t'
 # cargo
 
 # install Alacritty
-[[ ! -d "${HOME}"/.oss/alacritty ]] && git clone https://github.com/alacritty/alacritty "${HOME}/.oss/alacrittya"
+[[ ! -d "${HOME}"/.oss/alacritty ]] && git clone https://github.com/alacritty/alacritty "${HOME}/.oss/alacritty"
 cd "${HOME}/.oss/alacritty"
 rustup override set stable
 rustup update stable
