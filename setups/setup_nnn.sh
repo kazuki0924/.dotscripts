@@ -12,7 +12,7 @@ IFS=$'\n\t'
 cd "$HOME"/.oss/nnn
 make O_NERD=1
 [[ -f /usr/local/bin/nnn ]] && trash-put /usr/local/bin/nnn
-cp "${HOME}/.oss/nnn" /usr/local/bin
+cp "${HOME}/.oss/nnn/nnn" /usr/local/bin/nnn
 
 # install nnn plugins:
 # https://github.com/jarun/nnn
