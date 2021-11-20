@@ -15,13 +15,6 @@ done
 
 brew upgrade fnm --fetch-HEAD
 
-# fnm completions for zsh
-fnm completions --shell zsh | tee >"$HOME/.dotfiles/.config/zsh/completions/_fnm"
-(
-  cd "$HOME"/.dotscripts
-  make symlink &>/dev/null
-)
-
 # fnm
 echo Choose which version of Node.js to install globally
 # fuzzy find versions filtering out only the numbered ones in reverse order
