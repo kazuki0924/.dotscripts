@@ -7,18 +7,9 @@ IFS=$'\n\t'
 # Requirements:
 # cargo
 
-# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
-# See https://gist.github.com/cowboy/3118588
-sudo -v
-while true; do
-  sudo -n true
-  sleep 10
-  kill -0 "$$" || exit
-done 2>/dev/null &
-
 # install Alacritty
-git clone https://github.com/alacritty/alacritty "$HOME"/.oss/alacritty
-cd "$HOME"/.oss/alacritty || exit
+[[ ! -d "${HOME}"/.oss/alacritty ]] && git clone https://github.com/alacritty/alacritty "${HOME}/.oss/alacrittya"
+cd "${HOME}/.oss/alacritty"
 rustup override set stable
 rustup update stable
 make app
