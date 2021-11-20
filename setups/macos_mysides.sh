@@ -32,16 +32,9 @@ for ITEM in "${SIDEBAR_ITEMS_TO_DELETE[@]}"; do
 done
 
 SIDEBAR_ITEMS_TO_ADD=(
-	Repositories
 	Screenshots
 	Miscellaneous
-  .config
-	.dotfiles
-	.dotscripts
-  .zshfiles
-  .nvimfiles
-  .vscodefiles
-  .golandfiles
+  Repositories
 )
 
 for ITEM in "${SIDEBAR_ITEMS_TO_ADD[@]}"; do
