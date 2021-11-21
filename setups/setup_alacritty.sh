@@ -7,6 +7,14 @@ IFS=$'\n\t'
 # Requirements:
 # cargo
 
+# sudo in advance
+sudo -v
+while true; do
+  sudo -n true
+  sleep 10
+  kill -0 "$$" || exit
+done 2>/dev/null &
+
 # install Alacritty
 [[ ! -d "${HOME}"/.oss/alacritty ]] && git clone https://github.com/alacritty/alacritty "${HOME}/.oss/alacritty"
 cd "${HOME}/.oss/alacritty"

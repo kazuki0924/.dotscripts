@@ -4,13 +4,13 @@ IFS=$'\n\t'
 
 # duti: set default document and URL handlers for MacOS
 
-# Determine the bundle bundle ID:
+# Determine the bundle ID:
 # mdls /Applications/iPhoto.app | grep kMDItemCF
 # Determine the UTI:
 # mdls file.ext | grep kMDItemContentType
 
 # Delay start for a few seconds. If it runs too early, the change won't register.
-# sleep 5
+sleep 5
 
 REQUIREMENTS=(
 	duti
@@ -43,10 +43,14 @@ TEXTS=(
   .xml
   .cvs
   .json
+  .yml
+  .yaml
+  .toml
   .sql
   .lua
   .vim
   .vimrc
+  .rs
   Makefile
   Brewfile
 )
