@@ -1,5 +1,6 @@
-#!/usr/local/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
 # defaultbrowser: set default browser for MacOS
 

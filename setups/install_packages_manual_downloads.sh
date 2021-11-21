@@ -1,5 +1,6 @@
-#!/usr/local/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
 
 # Open links for softwares to download
 
