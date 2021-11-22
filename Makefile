@@ -32,12 +32,12 @@ clone:
 .PHONY: clone
 
 symlink:
+> @ ./tasks/purge_dead_symlinks.sh
 > @ cd ~/.dotfiles && make symlink && cd -
 > @ cd ~/.zshfiles && make symlink && cd -
 > @ cd ~/.nvimfiles && make symlink && cd -
 > @ cd ~/.golandfiles && make symlink && cd -
 > @ cd ~/.vscodefiles && make symlink && cd -
-> @ ./tasks/purge_dead_symlinks.sh
 
 .PHONY: symlink
 
