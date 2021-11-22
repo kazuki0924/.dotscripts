@@ -16,5 +16,4 @@ for DIR in "${DIRS[@]}"; do
 	echo created directory: "$DIR"
 done
 
-# Command Line Tools
-xcode-select --install
+

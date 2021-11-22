@@ -243,7 +243,7 @@ defaults -currentHost delete com.apple.screensaver showClock
 
 # ========== Size ==========
 # @int: size
-defaults write com.apple.dock tilesize -int 20
+defaults write com.apple.dock tilesize -int 100
 
 # ========== Magnification ==========
 # - Checked

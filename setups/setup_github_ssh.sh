@@ -19,7 +19,7 @@ DIR="$HOME/.ssh"
 
 [[ ! -d "$DIR" ]] && mkdir "$DIR"
 
-[[ ! -f "$DIR/id_rsa" ]] &&	ssh-keygen -t rsa
+[[ ! -f "$DIR/id_rsa" ]] && ssh-keygen -t rsa
 
 gh auth login
 
