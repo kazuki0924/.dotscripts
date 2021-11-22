@@ -42,4 +42,4 @@ symlink:
 .PHONY: symlink
 
 brew/prerequisites:
-> @ brew install make bash trash-cli fd
+> @ brew install make bash trash-cli fd tmux tmuxinator
