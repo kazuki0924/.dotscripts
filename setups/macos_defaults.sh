@@ -33,7 +33,6 @@ defaults write -g NSToolbarTitleViewRolloverDelay -float 0
 
 # ---------- Subpixel Anti-Aliasing (Font Smoothing) ----------
 
-
 # Enable
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
 
@@ -43,10 +42,10 @@ defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
 # ---------- Transparency in Menu and Windows ----------
 
 # Reduce Transparency
-# defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Restore Default Transparency
-defaults write com.apple.universalaccess reduceTransparency -bool false
+# defaults write com.apple.universalaccess reduceTransparency -bool false
 
 # ---------- Show Hidden App Icons ----------
 
@@ -82,7 +81,7 @@ defaults write com.apple.finder QuitMenuItem -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
-### Path Bar
+# ---------- Path Bar ----------
 
 # Show
 defaults write com.apple.finder ShowPathbar -bool true
@@ -90,16 +89,16 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Hide (Default)
 # defaults write com.apple.finder ShowPathbar -bool false
 
-### Save to Disk by Default
+# ---------- Save to Disk by Default ----------
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
-### Disable Creation of Metadata Files on Network Volumes
+# ---------- Disable Creation of Metadata Files on Network Volumes ----------
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-### Disable Creation of Metadata Files on USB Volumes
+# ---------- Disable Creation of Metadata Files on USB Volumes ----------
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-### Chime When Charging
+# ---------- Chime When Charging ----------
 
 # Enable (Default)
 # defaults write com.apple.PowerChime ChimeOnNoHardware -bool false && \
@@ -108,7 +107,7 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Disable
 defaults write com.apple.PowerChime ChimeOnNoHardware -bool true
 
-### Keyboard Auto-Correct
+# ---------- Keyboard Auto-Correct ----------
 
 # Disable
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
@@ -116,7 +115,7 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Enable (Default)
 # defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
 
-### Full Keyboard Access
+# ---------- Full Keyboard Access ----------
 
 # Text boxes and lists only (Default)
 # defaults write NSGlobalDomain AppleKeyboardUIMode -int 0
@@ -124,7 +123,7 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # All controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-### Key Repeat
+# ---------- Key Repeat ----------
 
 # Enable
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -132,7 +131,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # Disable (Default)
 # defaults write -g ApplePressAndHoldEnabled -bool true
 
-### Set Software Update Check Interval
+# ---------- Set Software Update Check Interval ----------
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # ========== Apprerance ==========
@@ -193,9 +192,9 @@ defaults write .GlobalPreferences NSTableViewDefaultSizeMode -int 1
 
 # ========== Automatically hide and show the menu bar ==========
 # - Checked
-# defaults write .GlobalPreferences _HIHideMenuBar -bool true
+defaults write .GlobalPreferences _HIHideMenuBar -bool true
 # - Unchecked
-defaults write .GlobalPreferences _HIHideMenuBar -bool false
+# defaults write .GlobalPreferences _HIHideMenuBar -bool false
 
 # ========== Show scroll bars ==========
 # - Automatically based on mouse or trackpad
