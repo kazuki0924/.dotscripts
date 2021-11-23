@@ -18,6 +18,10 @@ echo ""
 echo installing with luarocks...
 echo ""
 
+# argparse
+# https://github.com/mpeterv/argparse
+luarocks install argparse
+
 # luacheck
 # https://github.com/mpeterv/luacheck
 luarocks install luacheck

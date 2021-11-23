@@ -12,7 +12,7 @@ endif
 
 all: setup
 
-setup: clone symlink
+setup: clone .symlink symlink
 
 .PHONY: setup
 
@@ -31,6 +31,11 @@ clone:
 
 .PHONY: clone
 
+.symlink:
+> @ cp ~/.dotscripts/tasks/.symlink.sh /usr/local/bin/.symlink
+
+.PHONY: .symlink
+
 symlink:
 > @ ./tasks/purge_dead_symlinks.sh
 > @ cd ~/.dotfiles && make symlink && cd -
@@ -43,3 +48,5 @@ symlink:
 
 brew/prerequisites:
 > @ brew install make bash trash-cli fd tmux tmuxinator
+
+.PHONY brew/prerequisites:

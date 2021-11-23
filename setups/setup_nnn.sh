@@ -20,4 +20,4 @@ git checkout 532532704e72156aff140a07f8d7768d596eec02
 make O_NERD=1
 cp "${HOME}/.oss/nnn/nnn" /usr/local/bin/nnn
 mkdir -p "${HOME}/.config/nnn/plugins"
-cp "${HOME}/.oss/nnn/plugins/*" "${HOME}/.config/nnn/plugins"
+cp -r "${HOME}/.oss/nnn/plugins/" "${HOME}/.config/nnn/plugins"
