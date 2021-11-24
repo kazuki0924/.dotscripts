@@ -22,7 +22,6 @@ SIDEBAR_ITEMS_TO_DELETE=(
 	Movies
 	Music
 	Pictures
-	/
 )
 
 for ITEM in "${SIDEBAR_ITEMS_TO_DELETE[@]}"; do
@@ -33,6 +32,7 @@ for ITEM in "${SIDEBAR_ITEMS_TO_DELETE[@]}"; do
 done
 
 SIDEBAR_ITEMS_TO_ADD=(
+	/
 	Screenshots
 	Miscellaneous
   Repositories
