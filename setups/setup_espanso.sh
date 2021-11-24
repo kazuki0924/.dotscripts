@@ -5,11 +5,11 @@ IFS=$'\n\t'
 # espanso
 
 REQUIREMENTS=(
-  espanso
+	federico-terzi/espanso/espanso
 )
 
 for REQUIREMENT in "${REQUIREMENTS[@]}"; do
-  which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
+	which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
 done
 
 espanso register
