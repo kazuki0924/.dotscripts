@@ -8,6 +8,7 @@ declare -r CMD="clear && printf '\e[3J' && bash"
 [[ ! -d "${HOME}/scratches" ]] && mkdir -p "${HOME}/scratches" 
 [[ ! -f "${HOME}/scratches/repl.sh" ]] && touch "${HOME}/scratches/repl.sh" 
 
+cd "${HOME}/scratches"
 eval "${CMD} ${ARGS}"
 watchman-make \
   -r "${HOME}/scratches" \
