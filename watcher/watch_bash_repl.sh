@@ -2,16 +2,19 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
+WORK_DIR="${HOME}/scratches"
+WORK_FILE="repl.sh"
+
 declare -r CMD="clear && printf '\e[3J' && bash"
-[[ -n $* ]] && ARGS=$* || ARGS="${HOME}/scratches/repl.sh" 
+[[ -n $* ]] && FILE=$* || FILE="${WORK_DIR}/${WORK_FILE}"
 
-[[ ! -d "${HOME}/scratches" ]] && mkdir -p "${HOME}/scratches" 
-[[ ! -f "${HOME}/scratches/repl.sh" ]] && touch "${HOME}/scratches/repl.sh" 
+[[ ! -d "${WORK_DIR}" ]] && mkdir -p "${WORK_DIR}"
+[[ ! -f "${FILE}" ]] && touch "${FILE}"
 
-cd "${HOME}/scratches"
-eval "${CMD} ${ARGS}"
+cd "${WORK_DIR}"
+eval "${CMD} ${FILE}"
 watchman-make \
-  -r "${HOME}/scratches" \
-	-p 'repl.sh' \
+  -r "${WORK_DIR}" \
+	-p "*repl*" \
 	--make="${CMD}" \
-	-t "${ARGS}"
+	-t "${FILE}"
