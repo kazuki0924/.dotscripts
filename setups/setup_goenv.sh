@@ -5,7 +5,6 @@ IFS=$'\n\t'
 # golang: install with goenv interactively
 
 REQUIREMENTS=(
-  goenv
   fzf
 )
 
@@ -13,7 +12,11 @@ for REQUIREMENT in "${REQUIREMENTS[@]}"; do
   which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
 done
 
-brew upgrade goenv --fetch-HEAD
+if [[ ! -d ~/.goenv ]]; then
+  git clone https://github.com/syndbg/goenv.git ~/.goenv
+  echo goenv cloned to ~/.goenv. Rund the script again.
+  exec $SHELL
+fi
 
 # goenv
 echo Choose which version of go to install globally
