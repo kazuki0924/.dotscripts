@@ -14,7 +14,7 @@ done
 
 if [[ ! -d ~/.goenv ]]; then
   git clone https://github.com/syndbg/goenv.git ~/.goenv
-  echo goenv cloned to ~/.goenv. Rund the script again.
+  echo goenv cloned to ~/.goenv. Run the script again.
   exec $SHELL
 fi
 
