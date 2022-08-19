@@ -7,6 +7,8 @@ IFS=$'\n\t'
 LINKS=(
   # KensingtonWorks
   "https://www.kensington.com/software/kensingtonworks/"
+  # MacPorts
+  "https://www.macports.org/install.php"
 )
 
 for LINK in "${LINKS[@]}"; do
