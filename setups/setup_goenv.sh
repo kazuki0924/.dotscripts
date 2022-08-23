@@ -25,7 +25,7 @@ fi
 # goenv
 echo "Choose which version of golang to be installed globally:"
 
-# fuzzy find versions filtering out only the numbered ones in reverse order
+# fuzzy find versions in reverse order
 VERSION=$(goenv install --list | tac | fzf --layout=reverse --height=20%)
 goenv install "${VERSION//[[:space:]]/}"
 goenv global "${VERSION//[[:space:]]/}"

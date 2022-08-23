@@ -10,18 +10,19 @@ REQUIREMENTS=(
 )
 
 for REQUIREMENT in "${REQUIREMENTS[@]}"; do
-  which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
+  which "${REQUIREMENT}" &>/dev/null || brew install "${REQUIREMENT}"
 done
 
 brew upgrade fnm --fetch-HEAD
 
 # fnm
-echo Choose which version of Node.js to install globally
-# fuzzy find versions filtering out only the numbered ones in reverse order
-VERSION="v$(fnm ls-remote | cut -c 2- | awk '$0 !~ /[a-z]/' | sort -rn -k 1 -t "." | fzf --layout=reverse --height=20%)"
+echo "Choose which version of node.js to be installed globally:"
+# fuzzy find versions in reverse order
+VERSION=$(fnm ls-remote | tac | fzf --layout=reverse --height=20%)
 fnm install "${VERSION//[[:space:]]/}"
 fnm default "${VERSION//[[:space:]]/}"
  
 echo ""
-echo fnm current
+echo "fnm current:"
 fnm current
+

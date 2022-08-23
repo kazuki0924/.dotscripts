@@ -23,7 +23,7 @@ fuzzy_install_w_asdf() {
   asdf plugin-add "${TARGET}"
   set -e
   echo "Choose which version of ${TARGET} to be installed globally:"
-  # fuzzy find versions filtering out only the out-of-beta ones in reverse order
+  # fuzzy find versions in reverse order
   VERSION="$(asdf list-all "${TARGET}" | tac | fzf --layout=reverse --height=20%)"
   asdf install "${TARGET}" "${VERSION/[[:space:]]/}"
   asdf global "${TARGET}" "${VERSION/[[:space:]]/}"
