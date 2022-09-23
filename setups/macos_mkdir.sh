@@ -12,8 +12,6 @@ DIRS=(
 )
 
 for DIR in "${DIRS[@]}"; do
-	[ ! -d "$HOME/$DIR" ] && mkdir -p "$HOME/$DIR"
-	echo created directory: "$DIR"
+	[ ! -d "${HOME}/${DIR})" ] && mkdir -p "${HOME}/${DIR}"
+	echo "created directory: ${DIR}"
 done
-
-

@@ -5,9 +5,15 @@ IFS=$'\n\t'
 # Homebrew: brew bundle
 # if TARGET=$1 is not set, bundle only essentials
 # else bundle specific Brewfile by file name releative to ~/.dotfiles/.Brewfile
-# e.g. bash brew_bundle.sh brew/.Brewfile_essential
+# e.g. bash install_packages_brew_bundle.sh brew/.Brewfile_essential
 
-TARGET="${1-}"
+TARGET="${1-""}"
+
+set +e
+brew doctor
+brew cleanup
+brew update --verbose
+set -e
 
 REQUIREMENTS=(
   fd
@@ -19,24 +25,22 @@ for REQUIREMENT in "${REQUIREMENTS[@]}"; do
 done
 
 brew_bundle() {
-  brew bundle --verbose --no-lock --file="$1"
+  set +e
+  brew bundle --verbose --no-lock --file="${1}"
+  set -e
 }
 
-set +e
-brew doctor
-brew update --verbose
-set -e
+if [[ -z "${TARGET}" ]]; then
+  brew_bundle "${HOME}/.dotfiles/.Brewfiles/brew/.Brewfile_essentials"
+  brew_bundle "${HOME}/.dotfiles/.Brewfiles/cask/.Brewfile_essentials"
+  brew_bundle "${HOME}/.dotfiles/.Brewfiles/cask/.Brewfile_font"
+  brew_bundle "${HOME}/.dotfiles/.Brewfiles/mas/.Brewfile"
+else
+  brew_bundle "${HOME}/.dotfiles/.Brewfiles/${TARGET}"
+fi
 
-mapfile -t TAPS < <(fd -H . "$HOME/.dotfiles/.Brewfiles/tap")
-
+mapfile -t TAPS < <(fd -H . "${HOME}/.dotfiles/.Brewfiles/tap")
 for TAP in "${TAPS[@]}"; do
-  brew_bundle "$TAP"
+  brew_bundle "${TAP}"
 done
 
-if [[ -z "$TARGET" ]]; then
-  brew_bundle "$HOME/.dotfiles/.Brewfiles/brew/.Brewfile_essentials"
-  brew_bundle "$HOME/.dotfiles/.Brewfiles/cask/.Brewfile_essentials"
-  brew_bundle "$HOME/.dotfiles/.Brewfiles/cask/.Brewfile_font"
-else
-  brew_bundle "$HOME/.dotfiles/.Brewfiles/$TARGET"
-fi

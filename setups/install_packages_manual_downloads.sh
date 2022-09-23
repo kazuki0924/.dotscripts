@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-# Open links for softwares to download
+# Open links for software to download
 
 LINKS=(
   # KensingtonWorks
@@ -12,5 +12,5 @@ LINKS=(
 )
 
 for LINK in "${LINKS[@]}"; do
-  open "$LINK"
+  open "${LINK}"
 done

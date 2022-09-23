@@ -4,9 +4,9 @@ IFS=$'\n\t'
 
 # install Homebrew
 
-if ! which brew &>/dev/null; then
-	sudo -v
-	echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if which brew &>/dev/null; then
+  export NONINTERACTIVE=1
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew tap homebrew/bundle
 	brew tap homebrew/cask
 	brew tap homebrew/cask-drivers
@@ -16,6 +16,7 @@ if ! which brew &>/dev/null; then
 	brew tap homebrew/services
 	set +e
 	brew doctor
-	set -e
+	brew cleanup
 	brew update --verbose
+	set -e
 fi

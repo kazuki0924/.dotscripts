@@ -56,5 +56,6 @@ TEXTS=(
 )
 
 for TEXT in "${TEXTS[@]}"; do
-  duti -s $EDITOR "$TEXT" all
+  echo "Setting ${TEXT} to be opened by ${EDITOR} by default"
+  duti -s "${EDITOR}" "${TEXT}" all
 done

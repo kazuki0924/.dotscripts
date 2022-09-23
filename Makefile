@@ -10,9 +10,10 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = >
 
-all: setup
+all: setup clone .symlink symlink
 
-setup: clone .symlink symlink
+setup:
+> @ ./setups/setup_mac_init.sh
 
 .PHONY: setup
 

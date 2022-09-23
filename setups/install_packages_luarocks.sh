@@ -3,7 +3,7 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 # lua: 
-# - install packages with luarocks
+# install packages with luarocks
 
 REQUIREMENTS=(
   lua

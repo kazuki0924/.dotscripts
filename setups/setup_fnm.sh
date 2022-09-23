@@ -21,8 +21,10 @@ echo "Choose which version of node.js to be installed globally:"
 VERSION=$(fnm ls-remote | tac | fzf --layout=reverse --height=20%)
 fnm install "${VERSION//[[:space:]]/}"
 fnm default "${VERSION//[[:space:]]/}"
- 
+
 echo ""
 echo "fnm current:"
 fnm current
 
+npm install --global pnpm
+pnpm config set auto-install-peers true

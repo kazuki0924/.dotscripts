@@ -40,6 +40,6 @@ SIDEBAR_ITEMS_TO_ADD=(
 
 for ITEM in "${SIDEBAR_ITEMS_TO_ADD[@]}"; do
 	[[ ! -d ${ITEM} ]] && mkdir -pv "${HOME}/${ITEM}"
-	mysides add "${ITEM}" "file:///${HOME}/$ITEM" &>/dev/null
+	mysides add "${ITEM}" "file:///${HOME}/${ITEM}" &>/dev/null
 	echo addded "${ITEM}" with mysides
 done

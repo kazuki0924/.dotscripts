@@ -3,4 +3,8 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 # Command Line Tools
-xcode-select --install
+set +e
+if ! xcode-select --install; then
+  softwareupdate --all --install --force
+fi
+set -e

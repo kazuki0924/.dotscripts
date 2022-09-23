@@ -12,13 +12,16 @@ defaults write com.apple.dock persistent-apps -array
 
 APPS_TO_ADD=(
   Alacritty
-  iTerm
   "Google Chrome"
   "Visual Studio Code - Insiders"
   Slack
   Notion
 )
 
+echo "removing all items from dock..."
+dockutil --remove all
+
 for APP in "${APPS_TO_ADD[@]}"; do
-  dockutil --add "/Applications/$APP.app"
+  echo "adding ${APP} to dock..."
+  dockutil --add "/Applications/${APP}.app"
 done
